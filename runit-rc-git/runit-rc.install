@@ -1,0 +1,10 @@
+pre_install() {
+    mkdir -p /run/runit/sv/agetty-tty${i}
+    for ((i=1;i<=6;i++)); do
+        mkdir -p /run/runit/sv/agetty-tty${i}
+        ln -sf /etc/runit/sv/agetty-generic/run /run/runit/sv/agetty-tty${i}/run
+        ln -sf /etc/runit/sv/agetty-generic/finish /run/runit/sv/agetty-tty${i}/finish
+        cp /etc/runit/sv/agetty-generic/conf /run/runit/sv/agetty-tty${i}/conf
+        ln -sf /run/runit/sv/agetty-tty${i} /etc/runit/runsvdir/default/
+    done
+}

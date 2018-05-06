@@ -18,6 +18,7 @@ depends=('procps-ng' 'awk' 'bash' 'opentmpfiles' 'bootlogd')
 provides=('agetty-runit' 'runit-rc' 'init-kmod' 'init-udev' 'init-opentmpfiles' 'init-opensysusers')
 conflicts=('agetty-runit' 'runit-rc' 'init-kmod' 'init-udev' 'init-opentmpfiles' 'init-opensysusers')
 source=("git+${url}.git#branch=${_branch}")
+install="runit-rc.install"
 sha256sums=('SKIP')
 
 build() {
